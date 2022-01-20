@@ -1,0 +1,113 @@
+.journal-slider {
+  &__top {
+    margin-bottom: 45px;
+    @include mq(tablet, max) {
+      text-align: center;
+    }
+    @include mq(tablet) {
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+    }
+  }
+  &__heading {
+    margin-bottom: 25px;
+    @include typography(42px, 72px, 64px, 70px, 400, $f-heading, $c-gray-0d);
+    @include mq(tablet) {
+      margin-right: vw(30px);
+      margin-bottom: 0;
+      min-width: vw(400px);
+      text-align: center;
+      color: $c-gray-2f;
+    }
+  }
+  &__content {
+    flex-shrink: 1;
+    flex-grow: 1;
+    h6 {
+      margin-bottom: 16px;
+      @include mq(tablet, max) {
+        color: $c-gray-0d;
+      }
+    }
+  }
+  &__body {
+
+  }
+  &__slides {
+    margin-left: -20px;
+    margin-right: -20px;
+    @include mq(tablet) {
+      margin-left: 0;
+      margin-right: vw(-120px);
+    }
+  }
+  .loop-journal {
+    @include mq(tablet) {
+      width: vw(440px);
+      margin: 0 vw(20px);
+      &:hover {
+        .loop-journal__img img {
+          transform: scale(1.05);
+        }
+        .loop-journal__title {
+          color: $accent;
+        }
+      }
+    }
+    @include mq(desktop-wide) {
+      margin-right: 40px;
+    }
+    &__category {
+      position: absolute;
+      padding: 0 20px;
+      left: 0;
+      bottom: 18px;
+      width: 100%;
+      @include typography( 14px, 16px, 17.23px, 19.7px, 700, $f-text, $c-white);
+      text-transform: uppercase;
+      letter-spacing: 0.19em;
+      text-align: center;
+      z-index: 2;
+      @include mq(tablet) {
+        bottom: 40px;
+      }
+    }
+    &__img {
+      position: relative;
+      margin-bottom: 20px;
+      height: 450px;
+      overflow: hidden;
+      @include mq(tablet) {
+        margin-bottom: 30px;
+        height: vw(510px);
+      }
+      img {
+        @include cover-image();
+        transition: transform .5s ease-in-out;
+      }
+    }
+    &__content {
+      padding: 0 20px;
+      text-align: center;
+    }
+    &__title {
+      margin-bottom: 16px;
+      color: $c-gray-0d;
+      transition: color .3s ease-in-out;
+    }
+    &__desc {
+      color: $c-gray-0d;
+    }
+  }
+  &__all {
+    margin-top: 45px;
+    text-align: center;
+    @include mq(tablet) {
+      margin-top: 100px;
+    }
+    a {
+      min-width: 225px;
+    }
+  }
+}

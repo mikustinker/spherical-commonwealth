@@ -1,0 +1,68 @@
+.home {
+  #stay-us {
+    .media-content__media {
+      @include mq(tablet, max) {
+        margin-bottom: 50px;
+      }
+    }
+  }
+  #celebrations {
+    .media-content__media {
+      @include mq(tablet, max) {
+        margin-bottom: 54px;
+      }
+    }
+    .media-content__content {
+      @include mq(tablet, max) {
+        text-align: center;
+      }
+      .btn {
+        min-width: 275px;
+        @include mq(tablet) {
+          min-width: 250px;
+        }
+      }
+      .media-content__text {
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+  #heart-soul {
+    h2 {
+      margin-bottom: 30px;
+      @include typography(55px, 86px, 55px, 86px);
+      @include mq(tablet) {
+        margin-bottom: 50px;
+      }
+      span {
+        position: relative;
+        text-decoration: none !important;
+        &::after {
+          position: absolute;
+          content: '';
+          left: 0;
+          bottom: 5px;
+          width: 100%;
+          border-bottom: 2px solid $c-gray-2f;
+        }
+      }
+    }
+    h6 {
+      margin-bottom: 15px;
+    }
+  }
+  #celebrations {
+    .media-content__text p {
+      @include mq(tablet, max) {
+        padding: 0 10px;
+      }
+    }
+  }
+  .wp-block-image {
+    img {
+      @include mq(tablet, max) {
+        height: 580px;
+      }
+    }
+  }
+}

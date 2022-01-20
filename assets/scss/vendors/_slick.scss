@@ -1,0 +1,68 @@
+// Slick slider
+.slick-next,
+.slick-prev {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  transition: border 0.3s ease-in-out;
+
+  &:before {
+    content: none;
+  }
+}
+
+.slick-prev {
+  left: -43px;
+  border-width: 10.5px 21px 10.5px 0;
+  border-color: transparent #0d0d0d transparent transparent;
+
+  &:hover {
+    border-right-color: $accent;
+  }
+}
+
+.slick-next {
+  right: -43px;
+  border-width: 10.5px 0 10.5px 21px;
+  border-color: transparent transparent transparent #0d0d0d;
+
+  &:hover {
+    border-left-color: $accent;
+  }
+}
+
+.slick-dots {
+  position: static;
+  text-align: center;
+  margin-top: 18px;
+  line-height: 0;
+
+  @include mq(tablet) {
+    text-align: left;
+  }
+
+  li {
+    margin-left: 0;
+    margin-right: 6px;
+    width: auto;
+    height: auto;
+
+    button {
+      padding: 0;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background-color: #a0814c;
+      opacity: 0.7;
+      transition: background 0.3s ease-in-out;
+
+      &::before {
+        content: none;
+      }
+    }
+
+    &.slick-active button {
+      opacity: 1;
+    }
+  }
+}

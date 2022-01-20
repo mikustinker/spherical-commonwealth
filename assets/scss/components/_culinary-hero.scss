@@ -1,0 +1,46 @@
+.culinary-hero {
+  position: relative;
+  &.has-logo {
+    @include mq(tablet, max) {
+      margin-bottom: 30px;
+    }
+  }
+  &__images {
+    @include mq(tablet) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  &__image {
+    height: 580px;
+    @include mq(tablet) {
+      height: vw(895px);
+      max-height: 895px;
+    }
+    img {
+      @include cover-image();
+    }
+  }
+  .right-image {
+    @include mq(tablet, max) {
+      display: none;
+    }
+  }
+  &__logo {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 300px;
+    @include mq(tablet, max) {
+      left: 50%;
+      bottom: 0;
+      transform: translate(-50%, 50%);
+    }
+    @include mq(tablet) {
+      left: 48px;
+      bottom: 54px;
+      max-width: 30%;
+    }
+  }
+}

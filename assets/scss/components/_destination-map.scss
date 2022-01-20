@@ -1,0 +1,278 @@
+.destination-map {
+  position: relative;
+  z-index: 10;
+  .container {
+    @include mq(tablet) {
+      padding: 0 vw(240px) 0 vw(150px);
+    }
+  }
+  &__inner {
+    @include mq(tablet) {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      z-index: 2;
+    }
+  }
+  &__content {
+    @include mq(tablet) {
+      max-width: vw(465px);
+    }
+  }
+  &__heading {
+    margin-bottom: 20px;
+    @include typography(12px, 14px, 14.77px, 17.23px, 600, $f-text, $c-gray-0d);
+  }
+  &__text {
+    @include typography(12px, 14px, 18px, 21px, 400, $f-text, $c-gray-0d);
+    .dropcap {
+      margin-right: 10px;
+      float: left;
+      @include typography(42px, 89px, 42px, 89px, 400, $f-heading, $c-gray-2f);
+      letter-spacing: -0.04em;
+      @include mq(tablet) {
+        margin-right: 20px;
+      }
+    }
+  }
+  &__experience {
+    display: block;
+    margin-top: 44px;
+    @include mq(tablet, max) {
+      margin-left: -20px;
+      margin-right: -20px;
+    }
+    @include mq(tablet) {
+      position: absolute;
+      right: 0;
+      margin-top: vw(50px);
+      max-width: vw(455px);
+    }
+    &--heading {
+      margin-bottom: 24px;
+      @include typography(32px, 24px, 44px, 44px, 400, $f-heading, #1e1e1e);
+      text-align: center;
+      @include mq(tablet) {
+        margin-bottom: 12px;
+      }
+    }
+    &--image {
+      position: relative;
+      height: 500px;
+      overflow: hidden;
+      @include mq(tablet) {
+        height: vw(600px);
+        max-height: 600px;
+      }
+      &:hover {
+        img {
+          transform: scale(1.05);
+        }
+      }
+      img {
+        @include cover-image();
+        transition: all .5s ease-in-out;
+      }
+      &::after {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        content: '';
+        width: 100%;
+        height: 220px;
+        background: linear-gradient(0, #000000 0%, rgba(0, 0, 0, 0) 100%);
+        opacity: 0.25;
+        pointer-events: none;
+      }
+    }
+    &--cat {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      @include typography(10px, 12px, 12px, 14px, 600, $f-text, $c-white);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      background-color: $accent;
+    }
+    &--title {
+      position: absolute;
+      left: 0;
+      bottom: 20px;
+      padding: 0 20px;
+      width: 100%;
+      font: 600 14px/17.23px $f-text;
+      text-align: center;
+      color: $c-white;
+      z-index: 2;
+      @include mq(tablet) {
+        bottom: 35px;
+      }
+    }
+    &--desc {
+      margin-top: 16px;
+      font: 400 14px/20px $f-text;
+      color: $c-black;
+      @include mq(tablet) {
+        margin-top: 22px;
+      }
+    }
+  }
+  &__bg {
+    // @include mq(tablet) {
+    //   margin-top: vw(-300px);
+    // }
+    .map {
+      height: 900px;
+      @include mq(tablet) {
+        height: vw(1200px);
+        max-height: 1200px;
+      }
+    }
+  }
+  
+  .gm-style {
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: '';
+      left: 0;
+      width: 100%;
+      height: 175px;
+      background: linear-gradient(180deg, #FAF7F1 0%, rgba(250, 247, 241, 0) 100%);
+      pointer-events: none;
+      z-index: 1;
+
+      @include mq(tablet) {
+        height: vw(400px);
+        max-height: 400px;
+      }
+    }
+
+    &::before {
+      top: -1px;
+      
+    }
+
+    &::after {
+      bottom: -1px;
+      transform: rotate(-180deg);
+    }
+    
+    .gm-style-iw-c {
+      padding: 0;
+      border: none;
+      border-radius: 0;
+      max-width: none !important;
+      button {
+        top: 5px !important;
+        left: 5px !important;
+        width: 20px !important;
+        height: 20px !important;
+        background-color: $c-white !important;
+        &::before {
+          position: absolute;
+          content: '×';
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 20px;
+          color: $c-black;
+        }
+        img {
+          display: none !important;
+        }
+      }
+    }
+    .gm-style-iw-d {
+      padding: 0;
+      overflow: hidden !important;
+    }
+
+  }
+  .gm-control-active {
+    @include mq(tablet, max) {
+      display: none !important;
+    }
+  }
+  .marker {
+    &-popup {
+      width: 310px;
+    }
+    &-img {
+      position: relative;
+      height: 325px;
+      img {
+        @include cover-image();
+      }
+
+    }
+    &-cat {
+      position: absolute;
+      padding: 10px;
+      top: 20px;
+      right: 10px;
+      font: 600 12px/14px $f-text;
+      letter-spacing: 0.3em;
+      background-color: $accent;
+      color: $c-white;
+    }
+    &-content {
+      position: relative;
+      padding: 25px 20px;
+      background: $background-color;
+      border: 1px solid #7E7E7E;
+      box-shadow: 0px 9px 42px rgba(0, 0, 0, 0.02);
+      text-align: center;
+      // span {
+      //   width: 35px;
+      //   height: 35px;
+      //   border: 1px solid #7e7e7e;
+      //   background-color: $background-color;
+      // }
+    }
+    &-title {
+      font: 600 14px/17px $f-text;
+      letter-spacing: 0.2em;
+      color: $c-black;
+      @include mq(tablet) {
+        letter-spacing: 0.3em;
+      }
+    }
+    &-excerpt {
+      font: 400 14px/17px $f-text;
+      color: $c-black;
+    }
+  }
+  &__select {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    transform: translateX(-50%);
+    background: url("../images/map-gradient-line.svg") no-repeat top -7px center;
+
+    .jcf-select {
+      padding: 15px 30px 15px 10px;
+      background: $background-color;
+      border: 1px solid $accent;
+      margin: auto;
+      @include typography(10px, 14px, 12px, 14px, 600, $f-text, #1e1e1e);
+      letter-spacing: 0.15em;
+      width: 320px;
+      text-align: center;
+      @include mq(tablet) {
+        padding: 15px 50px 15px 30px;
+        letter-spacing: 0.25em;
+        width: 550px;
+      }
+      &::after {
+        border-top-color: #212121;
+        @include mq(tablet, max) {
+          right: 10px;
+        }
+      }
+    }
+  }
+}

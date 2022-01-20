@@ -1,0 +1,25 @@
+.single-culinary {
+  #events {
+    .media-content__content {
+      @include mq(tablet, max) {
+        .btn {
+          width: 100%;
+          max-width: 280px;
+        }
+        .media-content__title {
+          font-size: 55px;
+          line-height: 59px;
+        }
+        .media-content__text {
+          margin-bottom: 45px;
+        }
+      }
+    }
+    .media-content__media {
+      @include mq(tablet ,max) {
+        margin: 0;
+        width: 100%;
+      }
+    }
+  }
+}

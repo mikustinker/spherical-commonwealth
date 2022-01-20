@@ -1,0 +1,75 @@
+.loop-experience {
+  margin-bottom: 60px;
+  @include mq(tablet) {
+    margin-bottom: vw(50px);
+    &:nth-child(4n) {
+      width: vw(585px); 
+    }
+    &:nth-child(4n + 1) {
+      width: vw(585px); 
+    }
+    &:nth-child(4n + 2) {
+      width: vw(730px);
+    }
+    &:nth-child(4n + 3) {
+      width: vw(730px);
+    }
+  }
+  &.hide {
+    display: none;
+  }
+  &__image {
+    position: relative;
+    height: 525px;
+    overflow: hidden;
+    @include mq(tablet) {
+      height: vw(550px);
+    }
+    &:hover {
+      img {
+        transform: scale(1.05);
+      }
+    }
+    img {
+      @include cover-image();
+      transition: transform .5s ease-in-out;
+    }
+  }
+  &__bg {
+    @include cover-image();
+  }
+  &__category {
+    position: absolute;
+    padding: 10px;
+    top: 20px;
+    right: 20px;
+    background-color: $accent;
+    text-transform: uppercase;
+    @include typography(10px, 12px, 12.31px, 14.77px, 600, $f-text, $c-white);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    @include mq(tablet) {
+      top: vw(30px);
+      right: vw(30px);
+    }
+    @include mq(desktop-wide) {
+      top: 30px;
+      right: 30px;
+    }
+  }
+  &__title {
+    display: block;
+    margin-top: 20px;
+    @include button-underline(1px, $c-gray-2f);
+    h6 {
+      padding: 0 20px;
+      @include typography(14px, 16px, 17.23px, 19.7px, 600, $f-text, $c-gray-0d);
+      @include mq(tablet) {
+        color: $c-gray-2f;
+      }
+    }
+    @include mq(tablet) {
+      margin-top: 30px;
+    }
+  }
+}

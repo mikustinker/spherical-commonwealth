@@ -1,0 +1,85 @@
+.page-wellness {
+  .general-hero {
+    &__content {
+      &--inner {
+        @include mq(tablet) {
+          width: vw(700px);
+          max-width: 700px;
+        }
+      }
+    }
+
+    &__text {
+      h1 {
+        margin-bottom: 24px;
+        max-width: none;
+        @include typography(52px, 72px, 52px, 72px, 400, $f-heading, $c-gray-0d);
+
+        @include mq(tablet) {
+          margin-bottom: 30px;
+          color: $c-gray-2f;
+        }
+      }
+
+      h6 {
+        margin-bottom: 16px;
+        font: 600 14px/17.23px $f-text;
+        letter-spacing: 0.15em;
+        color: $c-gray-0d;
+
+        @include mq(tablet) {
+          letter-spacing: 0.25em;
+          color: $c-gray-21;
+        }
+      }
+
+      p {
+        color: $c-gray-0d;
+
+        @include mq(tablet, max) {
+          letter-spacing: -0.01em;
+        }
+      }
+    }
+  }
+
+  .wide-image .media-content__title {
+    @include mq(tablet, max) {
+      color: $c-gray-0d;
+    }
+  }
+
+  .media-content__text p {
+    @include mq(tablet, max) {
+      color: $c-gray-0d;
+    }
+  }
+  .media-content__btn {
+    @include mq(tablet) {
+      font-size: 11px;
+    }
+  }
+
+  .custom-wysiwig {
+    h2 {
+      margin: 0;
+      @include typography(52px, 72px, 64px, 72px, 400, $f-heading, $c-gray-2f);
+      @include mq(tablet, max) {
+        color: $c-gray-0d !important;
+      }
+    }
+  }
+
+  .accordions {
+    h6.accordions-heading {
+      margin-bottom: 20px;
+      @include typography(14px, 18px, 17px, 22px, 600, $f-text, $c-gray-21);
+      @include mq(tablet) {
+        margin-bottom: 45px;
+      }
+    }
+    .accordion-title {
+      font: 600 12px/14.77px $f-text;
+    }
+  }
+}

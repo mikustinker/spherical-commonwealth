@@ -1,0 +1,145 @@
+.experiences-banner {
+  &__bg {
+    position: relative;
+    height: 580px;
+    @include mq(tablet) {
+      height: vw(900px);
+      max-height: 100vh;
+    }
+    &::after {
+      position: absolute;
+      content: '';
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 320px;
+      background: linear-gradient(180deg, #FAF6EF 0%, rgba(250, 246, 239, 0) 100%);
+      transform: rotate(180deg);
+      pointer-events: none;
+      @include mq(tablet) {
+        height: vw(530px);
+      }
+    }
+    img {
+      @include cover-image();
+      opacity: 0.5;
+      @include mq(tablet) {
+        opacity: 0.25;
+      }
+    }
+  }
+  &__inner {
+    position: absolute;
+    padding: 0 20px;
+    top: 370px;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    text-align: center;
+    @include mq(tablet) {
+      display: flex;
+      top: 50%;
+      align-items: center;
+      justify-content: center;
+      transform: translateY(-50%);
+    }
+    .jcf-select {
+      padding: 0;
+      border: none;
+      width: auto;
+      @include mq(tablet) {
+        margin-left: 20px
+      }
+      &::after {
+        right: 0;
+        border-top-color: $c-gray-0d;
+        @include mq(tablet) {
+          right: -20px;
+          border-top-color: $c-black;
+        }
+      }
+      &-text {
+        @include typography(36px, 72px, 40px, 80px, 400, $f-heading, $c-gray-0d);
+        letter-spacing: -0.04em;
+        text-transform: none;
+        border-bottom: 2px solid $c-black;
+        @include mq(tablet) {
+          color: $c-black;
+          letter-spacing: -0.03em;
+        }
+      }
+      &-drop {
+        top: calc(100% + 30px);
+      }
+    }
+    .jcf-list {
+      li span {
+        font: 400 12px/2 $f-text;
+        letter-spacing: 0.01em;
+        color: $c-gray-33;
+        text-transform: none;
+        text-align: center;
+      }
+    }
+  }
+  &__heading {
+    @include typography(36px, 72px, 36px, 72px, 400, $f-heading, $c-gray-0d);
+    letter-spacing: -0.04em;
+    @include mq(tablet) {
+      color: $c-gray-2f;
+      letter-spacing: -0.03em;
+    }
+  }
+  &__content {
+    position: relative;
+    margin-top: -50px;
+    padding: 0 20px;
+    text-align: center;
+    @include mq(tablet) {
+      margin: auto;
+      width: vw(660px);
+      max-width: 660px;
+    }
+  }
+  &__text {
+    margin-bottom: 60px;
+    @include mq(tablet) {
+      margin-bottom: 40px;
+    }
+    h6 {
+      margin-bottom: 13px;
+      @include typography(11px, 14px, 13.54px, 17.23px, 600, $f-text, $c-gray-0d);
+      @include mq(tablet) {
+        color: $c-gray-21;
+      }
+    }
+    p {
+      color: $c-gray-0d;
+    }
+  }
+  .category-selectors {
+    display: flex;
+    margin-bottom: 50px;
+    flex-direction: column;
+    @include mq(tablet) {
+      margin-bottom: vw(130px);
+      flex-direction: row;
+      justify-content: center;
+    }
+    .jcf-select {
+      min-width: 280px; 
+      color: $c-gray-21;
+      border-color: $c-gray-21;
+      &::after {
+        border-top-color: $c-gray-21;
+      }
+    }
+  }
+  .category-selector:last-child {
+    margin-top: -1px;
+    @include mq(tablet) {
+      margin-top: 0;
+      margin-left: -1px;
+    }
+  }
+}

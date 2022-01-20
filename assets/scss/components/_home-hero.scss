@@ -1,0 +1,341 @@
+.home-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  @include when-inside('.general-hero') {
+    @include mq(tablet, max) {
+      @include orientation(portrait) {
+        height: vw(590px, $viewport-sm);
+      }
+    }
+    @include mq(tablet) {
+      height: 80vh;
+    }
+  }
+  @include when-inside('.spa-hero') {
+    @include mq(tablet) {
+      height: 80vh;
+    }
+  }
+  &::before,
+  &::after {
+    @include pseudo-elements();
+    z-index: 1;
+  }
+  &::before {
+    background-color: $primary;
+    opacity: 0.25;
+    @include when-inside('.general-hero') {
+      content: none;
+    }
+  }
+  &__carousel {
+    &::after {
+      content: none;
+    }
+  }
+
+  &::after {
+    top: auto;
+    bottom: -1px;
+    left: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 100%);
+    transform: rotate(180deg);
+    opacity: 0;
+    @include mq(tablet) {
+      height: vw(390px);
+      opacity: 0.75;
+    }
+    @include when-inside(".general-hero--dark") {
+      background: linear-gradient(180deg, #000000 0.11%, rgba(0, 0, 0, 0) 100.11%);
+      @include mq(tablet) {
+        height: vw(600px);
+      }
+    }
+    @include when-inside(".general-hero--light") {
+      background: linear-gradient(180deg, #F5F6F1 0%, rgba(245, 246, 241, 0) 100%);
+      @include mq(tablet) {
+        height: vw(440px);
+      }
+    }
+  }
+  &__bg {
+    @include cover-image();
+  }
+  &__logo {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+    @include mq(tablet, max) {
+      display: block;
+    }
+    &--text {
+      @include typography(61px, 68px, 61px, 68px);
+      color: $c-white;
+      letter-spacing: -0.04em;
+      white-space: nowrap;
+    }
+    &--img {
+      margin-top: -40px;
+      width: 240px;
+      max-width: none;
+      @include mq(tablet) {
+        margin-top: 0;
+        width: vw(410px);
+      }
+      @include mq(desktop-wide) {
+        width: 410px;
+      }
+    }
+  }
+  .scroll-link {
+    position: relative;
+    display: inline-block;
+    @include heading6();
+    letter-spacing: 0.45em;
+    color: $c-white;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      color: $primary;
+    }
+    &__wrapper {
+      position: absolute;
+      display: block;
+      bottom: 56px;
+      left: 50%;
+      z-index: 2;
+      transform: translateX(-50%);
+      @include mq(tablet) {
+        bottom: vw(70px);
+      }
+    }
+  }
+  .line {
+    position: absolute;
+    content: "";
+    bottom: -10px;
+    left: 50%;
+    width: 2px;
+    transform: translateX(-50%);
+    @include mq(tablet) {
+      bottom: 0;
+      transform: translate(-50%, 50%);
+    }
+    &-top,
+    &-bottom {
+      position: relative;
+      display: block;
+      width: 100%;
+      @include mq(tablet) {
+        height: vw(40px);
+      }
+      @include mq(desktop-wide) {
+        height: 40px;
+      }
+      &::before {
+        @include pseudo-elements();
+        height: 0;
+      }
+    }
+    &-top {
+      @include mq(tablet, max) {
+        height: 40px;
+      }
+      &::before {
+        background: $c-white;
+        animation: height 0.3s linear 0s 1 forwards;
+      }
+    }
+    &-bottom {
+      @include mq(tablet, max) {
+        height: 10px;
+      }
+      &::before {
+        background: #d1b37e;
+        animation: height 0.3s linear 0.3s 1 forwards;
+      }
+    }
+  }
+  .btn-audio {
+    display: flex;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    appearance: none;
+    z-index: 2;
+    &--mute {
+      display: none;
+    }
+    &.mute {
+      .btn-audio--play {
+        display: none;
+      }
+      .btn-audio--mute {
+        display: block;
+      }
+    }
+  }
+  &__slider {
+    margin-bottom: 0 !important;
+    height: 100%;
+    .slick-list,
+    .slick-track {
+      height: 100%;
+    }
+    .slick-dots {
+      position: absolute;
+      z-index: 2;
+      @include mq(tablet, max) {
+        margin-top: 0;
+        bottom: 30px;
+      }
+
+      @include mq(tablet) {
+        left: vw(70px);
+        bottom: vw(60px);
+      }
+      @include mq(desktop-wide) {
+        left: 70px;
+        bottom: 60px;
+      }
+      li {
+        button {
+          background-color: $c-gray-76;
+          opacity: 1;
+        }
+        &.slick-active button {
+          background-color: $c-white;
+        }
+      }
+    }
+  }
+  &__slide {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    &::after {
+      position: absolute;
+      content: '';
+      top: auto;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 100%);
+      transform: rotate(180deg);
+      opacity: 0;
+      z-index: 1;
+      @include mq(tablet) {
+        height: vw(500px);
+        opacity: 0.75;
+      }
+    }
+    video {
+      @include cover-image();
+    }
+  }
+  &__play {
+    display: none;
+    @include mq(tablet) {
+      position: absolute;
+      display: block;
+      bottom: vw(135px);
+      right: vw(160px);
+      z-index: 3;
+    }
+    @include mq(desktop-wide) {
+      bottom: 135px;
+      right: 160px;
+    }
+    svg {
+      circle {
+        transition: all .3s ease-in-out;
+      }
+    }
+    &:hover svg circle {
+      fill-opacity: 0.8;
+    }
+  }
+  &__content {
+    position: absolute;
+    z-index: 2;
+    @include mq(tablet, max) {
+      left: 50%;
+      bottom: 55px;
+      width: 100%;
+      text-align: center;
+      transform: translateX(-50%);
+    }
+    @include mq(tablet) {
+      left: vw(65px);
+      bottom: vw(130px);
+    }
+    @include mq(desktop-wide) {
+      left: 65px;
+      bottom: 130px;
+    }
+    h1, h2, h3, h4, h5, h6, p {
+      color: $c-white;
+    }
+    h2 {
+      margin-bottom: 15px;
+      @include typography(50px, 70px, 42px, 56px, 400, $f-heading, $c-white);
+    }
+  }
+}
+.general-hero {
+  &__content {
+    position: absolute;
+    padding: 0 20px;
+    left: 0;
+    bottom: 20px;
+    width: 100%;
+    z-index: 2;
+    @include mq(tablet) {
+      bottom: 80px;
+    }
+    &--inner {
+      margin: 0 auto;
+      text-align: center;
+      @include mq(tablet) {
+        max-width: vw(850px);
+      }
+    }
+  }
+  &__text {
+    * {
+      @include when-inside('.general-hero--dark') {
+        color: $c-white;
+      }
+    }
+    h1 {
+      margin-bottom: 20px;
+      line-height: 1;
+      @include mq(tablet) {
+        margin-bottom: vw(40px);
+      }
+      @include mq(desktop-wide) {
+        margin-bottom: 40px;
+      }
+    }
+  }
+}
+
+@keyframes height {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}

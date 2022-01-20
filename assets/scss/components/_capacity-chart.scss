@@ -1,0 +1,79 @@
+.capacity-chart {
+  text-align: center;
+  .container {
+    @include mq(tablet, max) {
+      padding: 0;
+    }
+  }
+  &__heading {
+    margin-bottom: 40px;
+    @include typography(32px, 54px, 36px, 64px, 400, $f-heading, $c-gray-2f);
+    letter-spacing: -0.03em;
+
+    @include mq(tablet) {
+      margin-bottom: vw(90px);
+    }
+
+    @include mq(desktop-wide) {
+      margin-bottom: 90px;
+    }
+  }
+
+  .table-responsive {
+    width: 100%;
+    overflow: auto;
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th {
+      padding: 20px;
+      border-bottom: 1px solid $c-black;
+      font: 600 12px/14px $f-text;
+      letter-spacing: 0.3em;
+      color: $c-black;
+      text-transform: uppercase;
+      white-space: nowrap;
+
+      @include mq(tablet) {
+        padding: 20px 10px;
+      }
+    }
+
+    td {
+      padding: 20px;
+      font: 400 11px/14px $f-text;
+      transition: all .3s ease-in-out;
+      text-transform: uppercase;
+      white-space: nowrap;
+
+      @include mq(tablet) {
+        padding: 20px 10px;
+      }
+
+      &:first-child {
+        font-size: 10px;
+        letter-spacing: 0.3em;
+        font-weight: 700;
+        color: $c-black;
+      }
+      small {
+        margin-top: 5px;
+        display: block;
+        font-size: 8px;
+        line-height: 1;
+        letter-spacing: 0.18em;
+      }
+    }
+
+    tr:hover {
+      td {
+        background-color: $accent;
+        color: $c-white;
+        cursor: pointer;
+      }
+    }
+  }
+}

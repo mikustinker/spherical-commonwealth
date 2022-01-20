@@ -1,0 +1,81 @@
+.single-room {
+  .general-hero {
+    &__text {
+      h1 {
+        margin-bottom: 20px;
+        line-height: 1;
+      }
+      h6 {
+        @include mq(tablet, max) {
+          letter-spacing: 0.1em;
+        }
+      }
+    }
+  }
+  .accordions {
+    .container {
+      padding: 0;
+    }
+  }
+  .accordion {
+    border-left: 0;
+    border-right: 0;
+    @include mq(tablet) {
+      border-color: #A3906E;
+    }
+    &-title {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      @include mq(tablet) {
+        padding-top: 25px;
+        padding-bottom: 25px;
+      }
+    }
+    &-content {
+      &__inner {
+        @include mq(tablet) {
+          max-width: none;
+        }
+      }
+      ul {
+        max-width: none;
+        @include mq(tablet) {
+          column-count: 2;
+        }
+      }
+    }
+  }
+  
+  .media-content {
+    &__media {
+      position: relative;
+      @include mq(tablet, max) {
+        margin-left: 0;
+        width: 100%;
+        height: 465px;
+      }
+    }
+    &__content {
+      @include mq(tablet, max) {
+        order: -1;
+        text-align: center;
+      }
+    }
+    &__title {
+      @include mq(tablet, max) {
+        margin-top: 20px;
+        margin-bottom: 10px;
+      }
+    }
+    &__text {
+      max-width: 100%;
+    }
+  }
+  .slider {
+    .slick-dotted.slick-slider {
+      @include mq(tablet, max) {
+        margin-bottom: 50px;
+      }
+    }
+  }
+}

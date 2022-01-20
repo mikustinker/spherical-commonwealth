@@ -1,0 +1,52 @@
+.culinary-form {
+  display: flex;
+  flex-direction: column-reverse;
+  @include mq(tablet) {
+    flex-direction: row;
+    align-items: center;
+  }
+  > div {
+    @include mq(tablet) {
+      flex: 0 0 50%;
+    }
+  }
+  &__image {
+    height: 450px;
+    @include mq(tablet) {
+      height: vw(960px);
+      max-height: 960px;
+    }
+    img {
+      @include cover-image();
+    }
+  }
+  &__content {
+    text-align: center;
+    @include mq(tablet, max) {
+      margin-top: 45px;
+    }
+  } 
+  &__heading {
+    margin-bottom: 12px;
+    @include typography(42px, 60px, 64px, 64px);
+    @include mq(tablet, max) {
+      color: #0d0d0d;
+    }
+    @include mq(tablet) {
+      margin-bottom: vw(36px);
+    }
+    @include mq(desktop-wide) {
+      margin-bottom: 36px;
+    }
+  }
+  &__subheading {
+    margin-bottom: 12px;
+  }
+  &__text {
+    margin-bottom: 24px;
+    color: #0d0d0d;
+  }
+  &__form {
+
+  }
+}

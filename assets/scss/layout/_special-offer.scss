@@ -1,0 +1,62 @@
+.special-offer {
+  border-top: 1px solid #d8d8d8;
+  padding: 40px 0;
+  background: url('../images/special-offer.png') repeat center;
+  text-align: center;
+
+  @include mq(tablet) {
+    padding: vw(75px) 0;
+  }
+
+  @include mq(desktop-wide) {
+    padding: 75px 0;
+  }
+
+  &__heading {
+    position: relative;
+    display: inline;
+    padding-right: 20px;
+    @include typography(22px, 54px, 32px, 60px, 400, $f-heading, #0f0f0f);
+    letter-spacing: -0.04em;
+    cursor: pointer;
+    @include mq(tablet) {
+      padding-right: 30px;
+    }
+
+    &::after {
+      position: absolute;
+      content: '';
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      @include triangle(bottom, $accent, 8px, 8px);
+      transition: all .3s ease-in-out;
+      @include mq(tablet) {
+        @include triangle(bottom, $accent, 14px, 14px);
+      }
+      @include when-inside('.active') {
+        transform: translateY(-50%) rotate(180deg);
+      }
+    }
+  }
+  &__form {
+    display: none;
+    padding-top: 40px;
+    @include mq(tablet) {
+      padding-top: vw(75px);
+    }
+    @include mq(desktop-wide) {
+      padding-top: 75px;
+    }
+    .form-col {
+      padding: 8px !important;
+    }
+    .jcf-select {
+      text-align: left;
+    }
+    .form-row {
+      margin: auto;
+      max-width: 860px;
+    }
+  }
+}

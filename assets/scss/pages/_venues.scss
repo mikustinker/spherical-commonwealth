@@ -1,0 +1,11 @@
+.page-venues {
+  .home-hero {
+    &::before {
+      content: none;
+    }
+
+    &::after {
+      background: linear-gradient(180deg, #FAF6EF 0%, rgba(250, 246, 239, 0) 100%);
+    }
+  }
+}

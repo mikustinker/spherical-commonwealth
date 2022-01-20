@@ -1,0 +1,55 @@
+.page-weddings {
+  #about {
+
+    h2 {
+      @include typography(42px, 72px, 46px, 64px, 400, $f-heading, $c-gray-2f);
+    }
+    .btn--accent {
+      display: inline-block;
+      margin-top: 40px;
+      width: 240px;
+    }
+  }
+
+  .media-content {
+    &__content {
+      margin-top: 30px;
+      @include mq(tablet) {
+        margin-top: 0;
+      }
+    }
+    &__title {
+      margin-bottom: 15px;
+      @include typography(32px, 60px, 36px, 64px, 400, $f-heading, $c-gray-2f);
+      letter-spacing: -0.03em;
+      @include mq(tablet) {
+        margin-bottom: 30px;
+      }
+    }
+    &__text {
+      @include mq(tablet) {
+        max-width: vw(410px);
+      }
+      h6 {
+        margin-bottom: 11px;
+        color: $c-gray-18;
+      }
+      .btn--accent {
+        display: inline-block;
+        margin-top: 20px;
+        @include mq(tablet) {
+          margin-top: 42px;
+        }
+      }
+      .btn--accent + .btn--accent {
+        margin-top: 10px;
+        @include mq(tablet) {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+  .post-two-cols__post {
+    pointer-events: none;
+  }
+}

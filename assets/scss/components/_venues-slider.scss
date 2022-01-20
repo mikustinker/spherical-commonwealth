@@ -1,0 +1,26 @@
+.venues-slider {
+  &__heading {
+    text-align: center;
+    margin-bottom: 20px;
+    @include typography(32px, 60px, 36px, 64px, 400, $f-heading, $c-gray-2f);
+    @include mq(tablet) {
+      margin-bottom: vw(50px);
+    }
+    @include mq(desktop-wide) {
+      margin-bottom: 50px;
+    }
+  }
+  &__cta {
+    margin-top: 40px;
+    text-align: center;
+    @include mq(tablet) {
+      margin-top: vw(90px);
+    }
+    @include mq(desktop-wide) {
+      margin-top: 90px;
+    }
+    .btn {
+      min-width: 240px;
+    }
+  }
+}

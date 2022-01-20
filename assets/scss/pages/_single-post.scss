@@ -1,0 +1,22 @@
+.single-post {
+  .two-columns-images {
+    .column-image__wrapper {
+      @include mq(tablet) {
+        height: vw(860px);
+        max-height: 860px;
+      }
+    }
+    .column-caption {
+      position: static;
+      font-size: 14px;
+      line-height: 16px;
+      letter-spacing: 0.25em;
+      color: $c-gray-18;
+      text-transform: uppercase;
+      margin-top: 20px;
+      &:hover {
+        color: $accent;
+      }
+    }
+  }
+}

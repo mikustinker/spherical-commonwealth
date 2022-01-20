@@ -1,0 +1,67 @@
+.page-destination {
+  .events-experiences {
+    .loop-culinary__image {
+      @include mq(tablet, max) {
+        height: 418px;
+      }
+    }
+    .img-a-img::before {
+      @include mq(tablet, max) {
+        padding-top: 418px;
+      }
+    }
+  }
+  .events-experiences{
+    &__heading {
+      @include typography(32px, 66px, 64px, 70px, 400, $f-heading, $c-gray-0d);
+    }
+    .loop-culinary {
+      @include mq(tablet, max) {
+        margin-bottom: 70px
+      }
+      &__category {
+        @include typography(10px, 12px, 12px, 14px, 600, $f-text, $c-white);
+      }
+    }
+    &__grid {
+      @include mq(tablet, max) {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+    }
+    &#offers {
+      .events-experiences__grid {
+        @include mq(tablet, max) {
+          margin: 0;
+        }
+      }
+      .loop-culinary {
+        @include mq(tablet, max) {
+          margin-bottom: 35px;
+        }
+      }
+    }
+    &__cta {
+      color: #212121;
+      @include mq(tablet) {
+        color: #010101;
+        &:hover {
+          color: $c-white;
+        }
+      }
+    }
+  }
+  .people-slider__heading {
+    @include typography(42px, 66px, 64px, 70px, 400, $f-heading, $c-gray-0d);
+  }
+  .loop-people {
+    &__role {
+      @include mq(tablet, max) {
+        font-size: 12px;
+      }
+    }
+    &__excerpt {
+      color: $c-gray-0d;
+    }
+  }
+}

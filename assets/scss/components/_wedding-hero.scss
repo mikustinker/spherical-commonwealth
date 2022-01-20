@@ -1,0 +1,46 @@
+.wedding-hero {
+  position: relative;
+  max-height: 100vh;
+  overflow: hidden;
+  &__images {
+    @include mq(tablet) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    &::after {
+      background: linear-gradient(0, #FAF6EF 0%, rgba(250, 246, 239, 0) 100%);
+      @include mq(tablet) {
+        height: vw(590px);
+      }
+    }
+  }
+  &__image {
+    &:first-child {
+      @include mq(tablet, max) {
+        display: none
+      }
+    }
+    img {
+      @include cover-image();
+    }
+  }
+  &__heading {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    @include typography(54px, 94px, 54px, 94px, 400, $f-heading, $c-gray-2f);
+    letter-spacing: -0.03em;
+    transform: translateX(-50%);
+    z-index: 2;
+    @include mq(tablet) {
+      bottom: vw(100px);
+    }
+    span {
+      font-family: $f-heading--secondary;
+      letter-spacing: -0.04em;
+      color: #9C7229;
+    }
+  }
+}

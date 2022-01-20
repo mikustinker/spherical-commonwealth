@@ -1,0 +1,42 @@
+.experience-taxonomy {
+  padding: 100px 0;
+  text-align: center;
+  @include mq(tablet) {
+    padding: vw(270px) 0 vw(200px);
+  }
+  @include mq(desktop-wide) {
+    padding: 270px 0 200px;
+  }
+  &__heading {
+    margin-bottom: 40px;
+    @include typography(44px, 84px, 48px, 84px, 400, $f-heading, $c-gray-0d);
+    @include mq(tablet) {
+      margin-bottom: vw(110px);
+    }
+  }
+  .category-selectors {
+    display: flex;
+    margin-bottom: 50px;
+    flex-direction: column;
+    @include mq(tablet) {
+      margin-bottom: vw(130px);
+      flex-direction: row;
+      justify-content: center;
+    }
+    .jcf-select {
+      min-width: 280px; 
+      color: $c-gray-21;
+      border-color: $c-gray-21;
+      &::after {
+        border-top-color: $c-gray-21;
+      }
+    }
+  }
+  .category-selector:last-child {
+    margin-top: -1px;
+    @include mq(tablet) {
+      margin-top: 0;
+      margin-left: -1px;
+    }
+  }
+}

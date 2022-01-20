@@ -1,0 +1,268 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the footer of the site/application.
+// -----------------------------------------------------------------------------
+
+// Footer styles
+.footer {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background: $c-gray-22;
+  &-top {
+    text-align: center;
+  }
+  &-logo {
+    display: inline-block;
+    margin: 100px auto;
+    @include mq(tablet) {
+      margin: vw(115px) auto;
+    }
+    @include mq(desktop-wide) {
+      margin: 115px auto;
+    }
+    img {
+      width: 245px;
+      @include mq(tablet) {
+        width: vw(420px);
+      }
+      @include mq(desktop-wide) {
+        width: 420px;
+      }
+    }
+  }
+  &-main {
+    @include mq(tablet) {
+      display: flex;
+      margin: 0 auto vw(100px);
+      text-align: left;
+      flex-wrap: wrap;
+    }
+    @include mq_mobile_landscape() {
+      flex-direction: column;
+      align-items: center;  
+    }
+    @include mq(desktop) {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
+    @include mq(desktop-wide) {
+      margin: 0 auto 100px;
+    }
+  }
+  &-item {
+    margin-bottom: 70px;
+    @include mq(tablet) {
+      margin-bottom: 0;
+    }
+    &__title {
+      margin-bottom: 1em;
+      @include typography(14px, 12px, 17.23px, 14.77px, 600, $f-text, $secondary);
+    }
+    &__content {
+      color: $secondary;
+      p {
+        font: 400 14px/24px $f-text;
+        color: $secondary;
+        letter-spacing: 0.01em;
+      }
+      a {
+        color: $secondary;
+        @include button-underline(1px, $secondary);
+      }
+    }
+  }
+  &-contact {
+    @include mq(tablet) {
+      flex: 0 0 calc(100% / 3);
+    }
+    @include mq_mobile_landscape() {
+      margin: 20px 0;
+      text-align: center;
+    }
+    @include mq(desktop) {
+      margin-right: vw(40px);
+      flex-basis: vw(160px);
+    }
+    @include mq(desktop-wide) {
+      margin-right: 40px;
+      flex-basis: 160px;
+    }
+  }
+  &-address {
+    @include mq(tablet) {
+      flex: 0 0 calc(100% / 3);
+    }
+    @include mq_mobile_landscape() {
+      text-align: center;
+      margin: 0 0 20px;
+    }
+    @include mq(desktop) {
+      margin-right: vw(40px);
+      flex-basis: vw(235px);
+    }
+    @include mq(desktop-wide) {
+      margin-right: 40px;
+      flex-basis: 235px;
+    }
+  }
+  &-partners {
+    @include mq(tablet) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      justify-content: space-between;
+      margin-bottom: vw(120px);
+    }
+    @include mq(desktop-wide) {
+      margin-bottom: 120px;
+    }
+    &__link {
+      display: block;
+      img {
+        max-height: 140px;
+        transition: transform .3s ease-in-out;
+      }
+      @include mq(tablet) {
+        display: inline-block;
+        &:hover {
+          img {
+            transform: scale(0.95);
+          }
+        }
+      }
+      @include mq(tablet, max) {
+        margin-bottom: 50px;
+      }
+    }
+    .divider {
+      @include mq(tablet, max) {
+        width: 200%;
+        margin-left: -20px;
+        margin-bottom: 40px;
+        border-bottom: 0.75px solid #8e8e8e;
+      }
+      @include mq(tablet) {
+        width: 0;
+        border-left: 1px solid #8e8e8e;
+        height: vw(85px);
+      }
+      @include mq(desktop-wide) {
+        height: 85px;
+      }
+    }
+  }
+  .social-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include mq(tablet) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 18px 20px;
+    }
+    .social-link {
+      margin: 0 20px;
+      transition: transform 0.3s ease-in-out;
+      @include mq(tablet) {
+        margin: 0;
+      }
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+  &-menu {
+    margin-bottom: 80px;
+    @include mq(tablet) {
+      flex: 0 0 100%;
+      margin-right: 0;
+      margin-bottom: 40px;
+      column-count: 3;
+      column-gap: 0;
+    }
+    @include mq_mobile_landscape() {
+      max-width: 100%;
+      margin-right: 0;
+      text-align: center;
+    }
+    @include mq(desktop) {
+      flex-basis: auto;
+      margin-right: vw(40px);
+      margin-bottom: 0;
+      column-gap: vw(33px);
+    }
+    @include mq(desktop-wide) {
+      margin-right: 40px;
+      flex: 0 0 vw(534px);
+    }
+    .menu-item {
+      margin-bottom: 1em;
+      @include mq(tablet, max) {
+        &:nth-child(4n) {
+          margin-bottom: 40px;
+        }
+      }
+    }
+    .nav-link {
+      @include body-text(small);
+      @include button-underline(1px, $secondary);
+      color: $secondary;
+      display: inline;
+    }
+  }
+  &-bottom {
+    padding: 70px 20px 80px;
+    text-align: center;
+    background: $c-gray-22;
+    border-top: 0.75px solid #8e8e8e;
+    @include mq(tablet) {
+      padding: 14px;
+      display: flex;
+      align-items: center;
+      border-top: 1px solid $c-gray-88;
+      justify-content: space-between;
+      text-align: left;
+    }
+    &__links {
+      @include mq(tablet, max) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    &__link {
+      letter-spacing: 0.02em;
+      @include typography(14px, 12px, 26px, 24px, 400, $f-text, $secondary);
+      @include button-underline(1px, $secondary);
+      padding-bottom: 0 !important;
+      @include mq(tablet, max) {
+        font-weight: 700;
+      }
+      @include mq(tablet) {
+        margin-right: 10px;
+      }
+    }
+    &__copyright {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      @include mq(tablet) {
+        flex-direction: row;
+      }
+      .divider {
+        display: none;
+        color: $c-white;
+        @include mq(tablet) {
+          margin: 0 10px;
+          display: inline-block;
+        }
+      }
+      .copyright {
+        @include typography(14px, 12px, 26px, 24px, 400, $f-text, $secondary);
+        @include mq(tablet, max) {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}

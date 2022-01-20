@@ -1,0 +1,163 @@
+.btn {
+  display: inline-block;
+  padding: 6px 20px;
+  font: 600 12px/28px $f-text;
+  letter-spacing: 3.6px;
+  border: 1px solid $c-gray-21;
+  background: $background_color;
+  color: $c-black;
+  text-align: center;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  @include mq(tablet) {
+    padding: 6px 40px;
+    &:hover {
+      background: $accent;
+      border-color: $accent;
+      color: $secondary;
+    }
+  }
+  &.btn--accent {
+    background: $accent;
+    border-color: $accent;
+    color: $secondary;
+    @include mq(tablet) {
+      &:hover {
+        background: $background_color;
+        color: $primary;
+        border-color: $primary;
+      }
+    }
+  }
+  &.btn--outline {
+    border-color: $secondary;
+    background-color: #0000;
+    color: $secondary;
+    @include mq(tablet) {
+      &:hover {
+        background-color: $secondary;
+        color: $accent;
+      }
+    }
+  }
+  &.btn-booking {
+    padding-right: 40px;
+    background-position: right 15px center;
+    background-repeat: no-repeat;
+    background-image: $booking-icon--accent;
+    &.btn--accent {
+      background-image: $booking-icon;
+    }
+    @include mq(tablet) {
+      &:hover {
+        background-image: $booking-icon;
+      }
+      &.btn--accent:hvoer {
+        background-image: $booking-icon--accent;
+      }
+    }
+  }
+}
+.cta {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 5px;
+  font: 600 14px/16.8px $f-text;
+  letter-spacing: 0.25em;
+  text-align: center;
+  text-transform: uppercase;
+  color: #262626;
+  &::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    border-bottom: 2px solid $c-black;
+    transform: scaleX(1);
+    transform-origin: 0% center;
+    transition: transform 0.3s ease-in-out;
+  }
+  @include mq(tablet) {
+    &:hover::after {
+      transform: scaleX(0);
+      transform-origin: 100% center;
+    }
+  }
+  &.cta-reverse {
+    &::after {
+      transform: scaleX(0);
+      transform-origin: 100% center;
+    }
+    @include mq(tablet) {
+      &:hover::after {
+        transform: scaleX(1);
+        transform-origin: 0 center;
+      }
+    }
+    &.active::after {
+      transform: scaleX(1);
+      transform-origin: 0 center;
+    }
+  }
+}
+.link {
+  position: relative;
+  display: inline-block;
+  font-size: 14px !important;
+  line-height: 21px !important;
+  color: $c-black;
+  &::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    bottom: 4px;
+    width: 100%;
+    border-bottom: 1px solid $c-black;
+    transform: scaleX(1);
+    transform-origin: 0% center;
+    transition: transform 0.3s ease-in-out;
+    @include mq(tablet) {
+      border-bottom-width: 1px;
+    }
+  }
+  @include mq(tablet) {
+    &:hover::after {
+      transform: scaleX(0);
+      transform-origin: 100% center;
+    }
+  }
+  &.link-reverse {
+    &::after {
+      transform: scaleX(0);
+      transform-origin: 100% center;
+    }
+    @include mq(tablet) {
+      &:hover::after {
+        transform: scaleX(1);
+        transform-origin: 0 center;
+      }
+    }
+  }
+}
+.link-arrow {
+  display: inline-block;
+  font: 600 14px/14.95px $f-heading--secondary;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: $c-gray-0d;
+  transition: all .3s ease-in-out;
+  @include mq(tablet) {
+    padding-right: 60px;
+    background-image: $arrow-icon;
+    background-position: right top -1px;
+    background-repeat: no-repeat;
+    background-size: 49px;
+    &:hover {
+      color: $accent;
+      background-image: $arrow-icon--accent;
+    }
+  }
+}

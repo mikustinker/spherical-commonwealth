@@ -1,0 +1,94 @@
+.single-experience {
+  .general-hero__text {
+    h1 {
+      margin-bottom: 30px;
+      @include typography(52px, 72px, 52px, 72px, 400, $f-heading, $c-gray-06);
+      @include mq(tablet) {
+        color: $c-gray-2f;
+      }
+    }
+    h6 {
+      @include typography(12px, 14px, 14.77px, 17.23px, 600, $f-text, $c-gray-0d);
+      @include mq(tablet, max) {
+        margin-left: -20px;
+        margin-right: -20px;
+        letter-spacing: 0.2em;
+      }
+      @include mq(tablet) {
+        color: $c-gray-18;
+      }
+    }
+  }
+  .two-columns {
+    .container {
+      @include mq(tablet, max) {
+        padding: 0 30px;
+      }
+    }
+    .btn {
+      width: 100%;
+      max-width: 290px;
+      @include mq(tablet) {
+        min-width: 230px;
+        font-size: 11px;
+      }
+      &.btn--accent {
+        @include mq(tablet, max) {
+          max-width: 330px;
+        }
+      }
+    }
+    .col-right {
+      .btn:not(.btn--accent) {
+        color: $c-black;
+        @include mq(tablet, max) {
+          max-width: 330px;
+        }
+      }
+    }
+  }
+  .media-content--original {
+    .container {
+      @include mq(tablet, max) {
+        display: flex;
+        flex-direction: column-reverse;
+      }
+    }
+    .media-content__title {
+      margin-bottom: 11px;
+      @include typography(42px, 60px, 45px, 64px, 400, $f-heading, $c-gray-0d);
+      @include mq(tablet) {
+        margin-bottom: 18px;
+        color: $c-gray-2f;
+      }
+    }
+    .media-content__text {
+      h6 {
+        margin-bottom: 18px;
+        @include typography(11px, 14px, 13.54px, 17.23px, 600, $f-text, $c-gray-0d);
+        @include mq(tablet) {
+          color: $c-gray-18
+        }
+      }
+      p {
+        color: $c-gray-0d;
+        @include mq(tablet) {
+          color: $c-black;
+        }
+      }
+    }
+  }
+
+  .accordions {
+    h3.accordions-heading {
+      @include typography(42px, 54px, 42px, 64px, 400, $f-heading, $c-gray-08);
+      @include mq(tablet) {
+        color: $c-gray-2f;
+      }
+    }
+    .accordion-title {
+      font-size: 12px;
+      line-height: 14.77px;
+    }
+  }
+}

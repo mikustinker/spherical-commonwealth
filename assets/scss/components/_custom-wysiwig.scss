@@ -1,0 +1,68 @@
+.custom-wysiwig {
+  &__inner {
+    @include mq(tablet) {
+      margin: auto;
+      width: 100%;
+      max-width: 530px;
+    }
+  }
+  h1 {
+    margin-bottom: 35px;
+
+    @include mq(tablet) {
+      margin-bottom: vw(30px);
+    }
+  }
+
+  h2 {
+    margin-bottom: 35px;
+
+    @include mq(tablet) {
+      margin-bottom: vw(35px);
+    }
+  }
+
+  h3 {
+    margin-bottom: 35px;
+
+    @include mq(tablet) {
+      margin-bottom: vw(60px);
+    }
+  }
+
+  h4 {
+    margin-bottom: 30px;
+
+    @include mq(tablet) {
+      margin-bottom: vw(50px);
+    }
+  }
+
+  h5 {
+    margin-bottom: 30px;
+
+    @include mq(tablet) {
+      margin-bottom: vw(42px);
+    }
+  }
+
+  h6 {
+    margin: 0 auto 30px;
+    max-width: 250px;
+
+    @include mq(tablet) {
+      max-width: none;
+      margin-bottom: vw(11px);
+    }
+  }
+
+  .btn {
+    min-width: 230px;
+  }
+
+  .button-groups {
+    a, button {
+      margin: 20px 10px;
+    }
+  }
+}

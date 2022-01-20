@@ -1,0 +1,18 @@
+.experiences-module {
+  padding: 0 !important;
+  .experience-grid {
+    @include mq(tablet, max) {
+      padding: 0;
+    }
+  }
+  &__cta {
+    width: 240px;
+    color: #010101;
+    @include mq(tablet) {
+      color: $c-gray-21;
+    }
+    &--wrapper {
+      margin-top: 50px;
+    }
+  }
+}

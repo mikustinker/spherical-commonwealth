@@ -1,0 +1,102 @@
+.single-offer {
+  .general-hero {
+    &__content {
+      &--inner {
+        @include mq(tablet) {
+          max-width: none;
+        }
+      }
+    }
+    &__text {
+      h1 {
+        margin-bottom: 20px;
+        @include typography(42px, 72px, 46px, 72px, 400, $f-heading, $c-gray-06);
+        @include mq(tablet) {
+          margin-bottom: 40px;
+          color: $c-gray-0d;
+          max-width: none;
+        }
+      }
+      h6 {
+        font: 600 14px/17.23px $f-text;
+        color: $c-gray-0d;
+        letter-spacing: 0.2em;
+        @include mq(tablet) {
+          letter-spacing: 0.45em;
+        }
+      }
+    }
+  }
+  .two-columns {
+    color: $c-gray-0d;
+    h6 {
+      font-size: 14px;
+      line-height: 20px;
+      color: $c-gray-0d;
+      letter-spacing: 0.2em;
+      @include mq(tablet) {
+        letter-spacing: 0.25em;
+      }
+    }
+    p {
+      color: $c-gray-0d;
+    }
+    .btn {
+      @include mq(tablet) {
+        font-size: 11px;
+      }
+    }
+    .btn--accent {
+      width: 100%;
+      max-width: 330px;
+      @include mq(tablet) {
+        max-width: 275px;
+      }
+    }
+    .col-right .btn {
+      width: 300px;
+      @include mq(tablet, max) {
+        color: $c-black;
+      } 
+      @include mq(tablet) {
+        width: auto;
+      }
+    }
+  }
+  .post-two-cols {
+    &__heading {
+      @include typography(42px, 82px, 42px, 82px, 400, $f-heading, $c-gray-0d);
+      @include mq(tablet) {
+        color: $c-gray-2f;
+      }
+    }
+    &__content {
+      h6 {
+        font: 600 14px/17.23px $f-text;
+        color: $c-gray-0d;
+        @include mq(tablet) {
+          color: $c-gray-18;
+        }
+      }
+    }
+    &__post--desc {
+      display: none;
+    }
+    &__buttons .btn {
+      @include mq(tablet, max) {
+        width: 100%;
+        max-width: 330px;
+      }
+    }
+  }
+  .contact-shortcode {
+    @include mq(tablet, max) {
+      justify-content: flex-start;
+    }
+    .direct-link {
+      @include mq(tablet) {
+        color: $c-gray-0d !important;
+      }
+    }
+  }
+}

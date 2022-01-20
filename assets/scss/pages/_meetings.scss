@@ -1,0 +1,167 @@
+.page-meetings {
+  .general-hero__text {
+    h1 {
+      @include typography(42px, 72px, 48px, 80px, 400, $f-heading, $c-gray-06);
+      @include mq(tablet) {
+        color: $c-gray-2f;
+      }
+
+    }
+  }
+  #meeting-about {
+    h6 {
+      font: 600 14px/18px $f-text;
+      letter-spacing: 0.05em;
+      @include mq(tablet) {
+        letter-spacing: 0.3em;
+      }
+    }
+    .btn {
+      width: 100%;
+      max-width: 330px;
+      @include mq(tablet) {
+        max-width: 230px;
+      }
+    }
+  }
+  .post-two-cols__posts {
+    @include mq(tablet, max) {
+      margin-left: -20px;
+      margin-right: -20px;
+    }
+  }
+  .post-two-cols__post--title {
+    @include typography(14px, 16px, 17.23px, 19.7px, 600, $f-text, $c-white);
+    @include mq(tablet) {
+      padding: 0 40px;
+      text-align: right;
+    }
+  }
+  .media-content--original {
+    .media-content__title {
+      @include mq(tablet, max) {
+        margin-bottom: 11px;
+        color: $c-gray-0d;
+      }
+    }
+    .media-content__text {
+      h6 {
+        @include mq(tablet, max) {
+          margin-bottom: 18px;
+          color: $c-gray-0d;
+        }
+      }
+      .btn {
+        @include mq(tablet, max) {
+          width: 100%;
+          max-width: 330px;
+        }
+      }
+    }
+  }
+  .rfp-form {
+    &__heading {
+      @include typography(42px, 68px, 64px, 68px, 400, $f-heading, $c-gray-0d);
+      @include mq(tablet) {
+        color: $c-gray-2f;
+      }
+    }
+    &__content {
+      h6 {
+        @include mq(tablet, max) {
+          letter-spacing: 0.2em;
+        }
+      }
+      p {
+        @include mq(tablet, max) {
+          color: $c-gray-0d;
+        }
+      }
+    }
+    .contact-form {
+      .form-control {
+        color: $c-gray-18;
+        @include mq(tablet, max) {
+          font-size: 10px;
+          line-height: 12px;
+          letter-spacing: 0.2em;
+        }
+      }
+      .jcf-select {
+        @include mq(tablet, max) {
+          font-size: 10px;
+          line-height: 12px;
+          letter-spacing: 0.2em;
+        }
+      }
+      .form-submit input[type=submit] {
+        font-size: 11px;
+      }
+    }
+  }
+  
+  .post-two-cols__post {
+    @include mq(tablet, max) {
+      margin-bottom: 66px;
+    }
+    &--desc {
+      @include typography(14px, 16px, 20px, 24px, 400, $f-text, $c-gray-0d);
+      @include mq(tablet) {
+        color: $c-black;
+      }
+    }
+  }
+  
+  .media-content--original {
+    .media-content__title {
+      @include typography(42px, 68px, 45px, 68px, 400, $f-heading, $c-gray-0d);
+      @include mq(tablet) {
+        margin-bottom: vw(40px);
+        color: $c-gray-2f;
+      }
+      @include mq(desktop-wide) {
+        margin-bottom: 40px;
+      }
+    }
+    .media-content__text {
+      @include mq(tablet) {
+        margin-bottom: vw(40px);
+        width: vw(410px);
+        max-width: 410px;
+      }
+      @include mq(desktop-wide) {
+        margin-bottom: 40px;
+      }
+      h6 {
+        margin-bottom: 20px;
+        color: $c-gray-0d;
+        @include mq(tablet) {
+          margin-bottom: 15px;
+          color: $c-gray-18;
+        }
+      }
+      .btn {
+        font-size: 11px;
+      }
+    }
+  }
+  .post-two-cols__buttons .btn {
+    @include mq(tablet, max){
+      width: 100%;
+      max-width: 330px;
+    }
+  }
+  .media-content {
+    &.wide-image .media-content__text p {
+      @include mq(tablet, max) {
+        color: $c-gray-0d;
+      }
+    }
+    &__btn {
+      @include mq(tablet, max) {
+        width: 100%;
+        max-width: 330px;
+      } 
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.custom-media {
+  .container {
+    @include mq(tablet, max) {
+      padding: 0;
+    }
+  }
+  .img-a-img {
+    &::before {
+      padding-top: 100vh;
+      @include mq(tablet) {
+        padding-top: 57.3%;
+      }
+    }
+  }
+  &__caption {
+    margin-top: 20px;
+    text-align: center;
+    @include mq(tablet) {
+      margin-top: 30px;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.page-rooms {
+  .post-banner__left {
+    @include mq(tablet, max) {
+      display: none;
+    }
+  }
+  #page-info {
+    h1 {
+      margin-bottom: 10px;
+    }
+  }
+  .navigation-block {
+    @include mq(tablet) {
+      padding-top: 76px;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+.navigation-block {
+  @include mq(tablet) {
+    padding-top: 47px;
+  }
+
+  .secondary-nav__link {
+    color: #0d0d0d;
+    &::after {
+      border-bottom-color: #0d0d0d;
+    }
+  }
+}

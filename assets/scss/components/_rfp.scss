@@ -1,0 +1,83 @@
+.rfp-form {
+  &__heading {
+    margin-bottom: 15px;
+    text-align: center;
+    @include typography(32px, 60px, 36px, 64px, 400, $f-heading, $c-gray-2f);
+    @include mq(tablet) {
+      margin-bottom: 28px;
+    }
+  }
+  &__content {
+    margin-bottom: 30px;
+    text-align: center;
+    @include mq(tablet) {
+      max-width: vw(500px);
+      margin: 0 auto 50px;
+    }
+    h6 {
+      margin-bottom: 15px;
+      color: $c-gray-0d;
+    }
+  }
+  .contact-form {
+    @include mq(tablet) {
+      max-width: 910px;
+      margin: auto;
+    }
+    .form-col {
+      max-width: none;
+      padding: 10px 5px;
+      &-2 {
+        flex: 0 0 100%;
+      }
+    }
+    .form-checkbox {
+      margin-top: 30px;
+      input {
+        display: none;
+        &:checked + span {
+          &::after {
+            background-color: $accent;
+          }
+        }
+      }
+      label {
+        position: relative;
+        padding-left: 42px;
+        line-height: 30px;
+        span {
+          &::before,
+          &::after {
+            position: absolute;
+            content: '';
+          }
+          &::before {
+            left: 0;
+            width: 26px;
+            height: 26px;
+            border: 1px solid $c-black;
+          }
+          &::after {
+            top: 3px;
+            left: 3px;
+            width: 20px;
+            height: 20px;
+            background-color: transparent;
+            transition: background .3s ease-in-out;
+          }
+        }
+      }
+    }
+    .form-submit {
+      margin-top: 30px;
+      text-align: center;
+      @include mq(tablet) {
+        margin-top: 60px;
+      }
+      input[type=submit] {
+        appearance: none;
+        min-width: 200px;
+      }
+    }
+  }
+}

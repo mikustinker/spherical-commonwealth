@@ -1,0 +1,48 @@
+// -----------------------------------------------------------------------------
+// This file contains all @font-face declarations, if any.
+// -----------------------------------------------------------------------------
+
+@font-face {
+  font-family: 'BentonSans';
+  src: url('../fonts/BentonSans-Regular.woff2') format('woff2'),
+  url('../fonts/BentonSans-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BentonSans';
+  src: url('../fonts/BentonSans-Bold.woff2') format('woff2'),
+  url('../fonts/BentonSans-Bold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BentonModDisp';
+  src: url('../fonts/BentonModDisp-Regular.woff2') format('woff2'),
+  url('../fonts/BentonModDisp-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BentonModDisp';
+  src: url('../fonts/BentonModDisp-Bold.woff2') format('woff2'),
+  url('../fonts/BentonModDisp-Bold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BentonModDispCond';
+  src: url('../fonts/BentonModDispCond-Bold.woff2') format('woff2'),
+  url('../fonts/BentonModDispCond-Bold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
